@@ -8,11 +8,15 @@ function adicionar() {
     };
 
     // Verifica se o nome já está na lista:
-     if(amigos.includes(amigo.value)) {
-        alert('Nome já adicionado.');
+    let nome = amigo.value.toUpperCase(); // conversão para maiúsculo
+    if (amigos.includes(nome)) { 
+        alert('Amigo já adicionado')
         return;
-    };
+    }
 
+    amigos.push(nome); //adicionar ao array
+
+    // Atualiza a lista de amigos na tela:
     let listaDeAmigos = document.getElementById('lista-amigos');
     amigos.push(amigo.value);
 
